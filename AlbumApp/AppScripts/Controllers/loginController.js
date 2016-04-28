@@ -14,7 +14,7 @@
                     $scope.message = response.error_description;
                 }
                 else {
-                    $rootScope.errors = [];
+
                     authData.authenticationData.IsAuthenticated = true;
                     authData.authenticationData.userName = $scope.loginData.userName;
                     $scope.authentication = authData.authenticationData;

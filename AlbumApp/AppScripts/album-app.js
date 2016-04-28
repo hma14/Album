@@ -7,6 +7,10 @@ var albumapp = angular.module('albumApp', ['ngRoute', 'apiServicesApp']);
 albumapp.config(function ($routeProvider, $locationProvider) {
     $routeProvider.
         when('/', {
+            templateUrl: '/AppScripts/views/Login.html',
+            controller: 'loginController'
+        }).
+        when('/album', {
             templateUrl: '/AppScripts/views/album.html',
             controller: 'albumController'
         }).
