@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
+    <title>Album</title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+    <link href="Content/ProjectStyle.css" rel="stylesheet" />   
+    <base href="/" />
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+</head>
+<body ng-app="albumApp">
+    <script type="text/javascript">
+
+        // Menu
+        $(function () {
+            InitMenu();
+        });
+
+        function InitMenu() {
+            $('.menu li').hover(function () {
+                $('ul:first', this).css({ visibility: "visible", display: "none" }).fadeIn(1500).show();
+            }, function () {
+                $('ul:first', this).css({ visibility: "hidden" });
+            });
+        }
+
+    </script>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="indexController">
+        <div class="container">
+            <div class="collapse navbar-collapse" data-collapse="!navbarExpanded">
+                <ul class="nav navbar-nav menu">
+                    <li  data-ng-hide="!authentication.IsAuthenticated"><a href="album">Album</a></li>
+                    <li  data-ng-hide="!authentication.IsAuthenticated"><a href="addphoto">Add Photo</a></li>
+                    <li  data-ng-hide="!authentication.IsAuthenticated"><a href="deletephoto">Delete Photo</a></li>
+                    <li>
+
+                        <a  data-ng-hide="!authentication.IsAuthenticated" href="#" onmouseover="InitMenu();">Videos</a>
+                        <ul  data-ng-hide="!authentication.IsAuthenticated" class="submenu">
+                            <li><a href="videopugs">Shelley's Pugs</a></li>
+                            <li><a href="videoski">Ski on Cypress Mt.</a></li>
+                            <li><a href="videogranvilleisland">Granville Island</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li data-ng-hide="!authentication.IsAuthenticated"><a href="">Welcome, {{authentication.userName}}</a></li>
+                    <li data-ng-hide="!authentication.IsAuthenticated"><a href="" data-ng-click="logOut()">Logout</a></li>
+                    <li data-ng-hide="authentication.IsAuthenticated"> <a href="/login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <ul class="alert alert-danger alert-dismissable" ng-show="errors && errors.length">
+        <li ng-repeat="error in errors">
+            {{error}}
+        </li>
+    </ul>
+    <div class="container">
+        <div data-ng-view="">
+        </div>
+    </div>
+    <hr />
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                Family Photo Album 
+            </div>
+        </div>
+    </div>
+    <!-- 3rd party libraries -->
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/angular-route.min.js"></script>
+    <script src="Scripts/angular-resource.min.js"></script>
+    <script src="Scripts/angular-local-storage.min.js"></script>
+
+    <!-- Load app main script -->
+    <script src="AppScripts/album-app.js"></script>
+
+    <!-- Load Angular services -->
+    <script src="AppScripts/Services/loginService.js"></script>
+    <script src="AppScripts/Services/AuthenticationService.js"></script>
+    <script src="AppScripts/Services/AuthData.js"></script>
+
+
+    <!-- Load Angular controllers -->   
+    <script src="AppScripts/Controllers/albumController.js"></script>
+    <script src="AppScripts/Controllers/resource.js"></script>
+    <script src="AppScripts/Controllers/youtube-app.js"></script>   
+    <script src="AppScripts/Controllers/loginController.js"></script>
+    <script src="AppScripts/Controllers/indexController.js"></script>
+
+</body>
+</html>
+

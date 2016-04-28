@@ -1,0 +1,181 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    /*height: 800px;*/
+    height: auto;
+    width: 100%;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+/* Set padding to display errors that occur during databinding */
+.padding-error {
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .nofloat {
+        float: none;
+        padding: 10px 15px;
+    }
+}
+
+#iconContainer {
+    background-color: antiquewhite;
+    width: 500px;
+    height: 780px;
+    overflow-y: auto;
+    position: relative;
+    float: left;
+}
+
+#iconContainer_delete {
+    background-color: antiquewhite;
+    height: 780px;
+    /*overflow-y: scroll;*/
+    position: relative;
+    float: left;
+}
+
+
+.icons a {
+    display: inline-block;
+    float: left;
+}
+
+.icons img:hover {
+    cursor: pointer;
+}
+
+
+#mainImage {
+    background-color: white;
+    width: auto;
+    height: auto;
+    /*overflow-y: auto;
+    overflow-x:auto;*/
+    position: relative;
+    align-content: center;
+    float: left;
+}
+
+
+#imageHolder {
+    height: auto;
+    margin: 10px;
+    overflow: hidden;
+    /*position:absolute;*/
+    /*align-content:center;*/
+}
+
+#commands {
+    clear: left;
+    height: auto;
+    position: relative;
+}
+
+#hei, #wid, label {
+    margin-left: 10px;
+}
+
+.inputs {
+    float: left;
+}
+
+.btns {
+    float: right;
+}
+
+/*.btn {
+    margin-left: 15px;
+}*/
+
+.status {
+    clear: both;
+    font-size: .8em;
+}
+
+
+
+.menu {
+    /*font-size: 0.875em;*/
+    font-size: 1.2em;
+    z-index: 0;
+}
+
+.submenu li {
+    list-style-type: none;
+    padding: 5px;
+    
+}
+
+
+
+.submenu {
+    padding-left: 0px;
+    -webkit-padding-start: 0;
+    position: relative;
+    z-index: 10000;
+    font-size: .8em;
+    font-weight: bold;
+}
+
+.menu li ul {
+    background-color: darkcyan; /*#368BC1;*/
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    width: 150px;
+}
+
+
+    .menu li ul a {
+        color: white;
+    }
+
+    .menu li ul li:hover ul {
+        display: block;
+        left: 0;
+        right: 0;
+    }
+
+
+.menu li ul a {
+    font-size: 0.875em;
+    position: relative;
+    z-index: 1;
+}
+
+.menu li ul li:hover,
+.menu li ul:not( :hover ) li.active {
+    background-color:antiquewhite; /*rgb(19, 97, 165);*/
+}
+
+.menu li ul li:hover a {
+    color: darkcyan;
+    text-decoration:none;
+}
+
+iframe {
+    margin-top:2px;
+}

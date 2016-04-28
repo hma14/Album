@@ -1,0 +1,15 @@
+﻿<div class="row" ng-app="albumApp" ng-controller="albumController" ng-init="init()">
+    <div id="iconContainer" class="thumbnail">
+        <div class="icons">
+            <span ng-repeat="image in images">
+                <img ng-src="data:image/jpeg;base64,{{image.imageSmall}}" ng-click="setImage(image.imageLarge)">
+            </span>
+        </div>
+    </div>
+    <div id="mainImage" class="well well-lg">
+        <img ng-src="data:image/jpeg;base64,{{img.imageLarge}}"
+             class="LargeImage"
+             ng-repeat="img in images"
+             ng-class="{active: mainImageUrl==img.imageLarge}">
+    </div>
+</div>

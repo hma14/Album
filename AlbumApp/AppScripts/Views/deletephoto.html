@@ -1,0 +1,10 @@
+﻿<div class="row" ng-app="albumApp" ng-controller="albumController" ng-init="init()">
+    <div id="iconContainer_delete" class="thumbnail">
+        <div class="icons">
+            <span ng-repeat="image in images">
+                <img ng-src="data:image/jpeg;base64,{{image.ImageSmall}}" ng-click="deleteImage(image)">
+            </span>
+        </div>
+    </div>
+    
+</div>

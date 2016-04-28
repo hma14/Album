@@ -1,0 +1,25 @@
+﻿<div id="bodyContainer" ng-app="albumApp" ng-controller="albumController">
+
+    <div id="imageHolder" class="col-lg-12 img-rounded img-responsive" >
+        <img class="img-rounded img-responsive" degrees='angle' rotate  id="photo-id" />
+    </div>
+    <div class="row" id="commands">
+        <div class="row col-lg-6">
+            <input class="form-control" type="file" name="file" 
+                   onchange="angular.element(this).scope().addImage(this)" 
+                   id="photo-upload" />
+        </div>
+        <div class="col-lg-4">
+            <select ng-model="angle" class="form-control"                   
+                    ng-options="option.degree as option.description for option in options" >                
+            </select>
+        </div>
+        <div class="col-lg-2">
+            <a class="btn btn-info btn-primary btn-md" ng-click="saveImage()">Add Photo</a>
+        </div>
+    </div>
+    <br />
+    <div >
+        <p class="row text-success success alert-success" ng-model="message">{{message}}</p>
+    </div>
+</div>

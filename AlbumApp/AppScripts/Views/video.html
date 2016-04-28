@@ -1,0 +1,21 @@
+﻿<div  class="container-fluid" ng-app="youtubeApp" ng-controller="YouTubeCtrl">
+    <youtube width="{{yt.width}}" height="{{yt.height}}" videoid="{{yt.videoid}}"></youtube>
+    <div class="col-lg-10">
+        <div class="col-lg-7 inputs">
+            <label for="wid">Width: </label><input id="wid" class="input-group-sm " type="text" ng-model="yt.width">
+            <label for="hei">Height: </label><input id="hei" class="input-group-sm" type="text" ng-model="yt.height">
+            <!--<label for="hei">Videoid: </label><input id="videoid" class="input-group-sm" type="text" ng-model="yt.videoid">-->
+           
+        </div>
+
+        <div class="col-lg-3 btns">
+            <button class="btn col-lg-3 btn-primary btn-sm" ng-click="sendControlEvent(YT_event.PLAY)">Play</button>
+            <button class="btn col-lg-3 btn-primary btn-sm" ng-click="sendControlEvent(YT_event.PAUSE)">Pause</button>
+            <button class="btn col-lg-3 btn-primary btn-sm" ng-click="sendControlEvent(YT_event.STOP)">Stop</button>
+        </div>
+    </div>
+    <div class="status">
+        <span class="text-info">Status:</span> <span class="text-danger warning">{{yt.playerStatus}}</span>
+    </div>
+
+</div>
