@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-var serviceBase = 'http://localhost:57400/';
+var serviceBase = 'http://restfulws.lottotry.com/';
 
 var albumapp = angular.module('albumApp', ['ngRoute', 'apiServicesApp']);
 

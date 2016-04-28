@@ -88,6 +88,7 @@
     <Content Include="Scripts\bootstrapmap.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\angular-resource.min.js.map" />
+    <None Include="Properties\PublishProfiles\AlbumApp_Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

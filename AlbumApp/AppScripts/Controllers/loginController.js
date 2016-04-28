@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
-    albumapp.controller('loginController', ['$scope', '$rootScope', '$http', 'LoginService', '$location', 'AuthenticationService',
-        function ($scope, $rootScope, $http, loginService, $location, AuthenticationService) {
+    albumapp.controller('loginController', ['$scope', '$rootScope', '$http', 'LoginService', '$location', 'AuthenticationService', 'authData',
+        function ($scope, $rootScope, $http, loginService, $location, AuthenticationService, authData) {
 
         $scope.loginData = {
             userName: "",
@@ -15,6 +15,9 @@
                 }
                 else {
                     $rootScope.errors = [];
+                    authData.authenticationData.IsAuthenticated = true;
+                    authData.authenticationData.userName = $scope.loginData.userName;
+                    $scope.authentication = authData.authenticationData;
                     AuthenticationService.setHeader($http);
                     $location.path('/album');
                 }
