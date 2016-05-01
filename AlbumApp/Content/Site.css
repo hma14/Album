@@ -179,3 +179,8 @@ textarea {
 iframe {
     margin-top:2px;
 }
+
+.errorMessage
+{
+    color:red;font-weight:bold;
+}
