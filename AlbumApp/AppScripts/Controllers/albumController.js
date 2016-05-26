@@ -185,7 +185,7 @@
 
             $scope.deleteImage = function (image) {
                 if (popupService.showPopup('Are you sure to delete this photo?')) {
-                    var promise = Image.remove({ id: image.imageId });
+                    var promise = Image.remove({ id: image.ImageId });
                     promise.$promise.then(function () {
                         var index = $scope.images.indexOf(image);
                         $scope.images.splice(index, 1);
