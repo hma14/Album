@@ -201,28 +201,28 @@
                     //        $exceptionHandler(response, response);
                     //    });
 
-                    AuthenticationService.setHeader($http);
-                    var head = {'Content-Type':'text/plain; charset=UTF-8',
-                        'Access-Control-Allow-Origin': 'http://localhost:57412/',
-                        'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE'};
-                    var url = 'http://restfulws.lottotry.com/api/Images';
-                    $http.delete(url + '?id=' + image.ImageId, { headers: head }).then(
-                        function (response) {
-                            var index = $scope.images.indexOf(image);
-                            $scope.images.splice(index, 1);
-                        },
-                        function (response) {
-                            $exceptionHandler(response, response);
-                        });
+                    //AuthenticationService.setHeader($http);
+                    //var head = {'Content-Type':'text/plain; charset=UTF-8',
+                    //    'Access-Control-Allow-Origin': 'http://localhost:57412/',
+                    //    'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT, DELETE'};
+                    //var url = 'http://restfulws.lottotry.com/api/Images';
+                    //$http.delete(url + '?id=' + image.ImageId, { headers: head }).then(
+                    //    function (response) {
+                    //        var index = $scope.images.indexOf(image);
+                    //        $scope.images.splice(index, 1);
+                    //    },
+                    //    function (response) {
+                    //        $exceptionHandler(response, response);
+                    //    });
 
-                    //var promise = Image.remove({ id: image.ImageId });
-                    //promise.$promise.then(function () {
-                    //    var index = $scope.images.indexOf(image);
-                    //    $scope.images.splice(index, 1);
-                    //},
-                    //function (error) {
-                    //    $exceptionHandler(error.data, error.data);
-                    //});
+                    var promise = Image.remove({ id: image.ImageId });
+                    promise.$promise.then(function () {
+                        var index = $scope.images.indexOf(image);
+                        $scope.images.splice(index, 1);
+                    },
+                    function (error) {
+                        $exceptionHandler(error.data, error.data);
+                    });
                 }
             };
         }]);
