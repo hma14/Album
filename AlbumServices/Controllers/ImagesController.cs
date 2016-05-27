@@ -12,10 +12,12 @@ using System.Web.Http.Description;
 using AlbumServices.Models;
 using System.Linq.Expressions;
 using AlbumServices.DTO;
+using System.Web.Http.Cors;
 
 namespace AlbumServices.Controllers
 {
     [Authorize]
+    [EnableCors(origins: "http://album.lottotry.com", headers: "*", methods: "*")]
     public class ImagesController : ApiController
     {
         private ImageDbContext db = new ImageDbContext();
@@ -98,6 +100,7 @@ namespace AlbumServices.Controllers
         }
 
         // DELETE: api/Images/5
+        [HttpDelete]
         [ResponseType(typeof(Image))]
         public async Task<IHttpActionResult> DeleteImage(int id)
         {

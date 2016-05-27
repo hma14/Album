@@ -18,7 +18,7 @@ namespace AlbumServices
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
-            var cors = new EnableCorsAttribute("*", "*", "GET, POST");
+            var cors = new EnableCorsAttribute("*", "*", "GET, POST, DELETE, PUT");
             config.EnableCors(cors);
 
             // Web API routes
