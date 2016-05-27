@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="AppScripts\album-app.js" />
     <Content Include="AppScripts\Controllers\albumController.js" />
+    <Content Include="AppScripts\Controllers\nextController.js" />
     <Content Include="AppScripts\Controllers\resource.js" />
     <Content Include="AppScripts\Controllers\youtube-app.js" />
     <Content Include="AppScripts\Views\addphoto.html" />

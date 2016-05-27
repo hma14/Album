@@ -30,6 +30,7 @@
                 if ((tokenInfo != undefined) && (tokenInfo.accessToken != undefined) && (tokenInfo.accessToken != null) && (tokenInfo.accessToken != "")) {
                     http.defaults.headers.common['Authorization'] = 'Bearer ' + tokenInfo.accessToken;
                     http.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+                    http.defaults.headers.common['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
                 }
             }
 

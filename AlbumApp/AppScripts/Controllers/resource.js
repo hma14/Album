@@ -3,19 +3,21 @@
 var apiServicesApp = angular.module('apiServicesApp', ['ngResource']);
 
 
-apiServicesApp.factory('Image', ['$resource', 'AuthenticationService', function ($resource, AuthenticationService) {
-    return $resource(serviceBase + 'api/Images/:id', {}, {
-        query: { method: "GET", isArray: true },
-        create: { method: "POST" },
-        get: { method: "GET", url: serviceBase + "api/Images?id=:id" },
-        remove: { method: "DELETE", url: serviceBase + "api/Images?id=:id" },
-        update: { method: "PUT", url: serviceBase + "api/Images?id=:id" }
-    })
-}]);
+apiServicesApp.factory('Image', ['$resource', 'AuthenticationService',
+    function ($resource, AuthenticationService) {
+        //return $resource(serviceBase + 'api/Images/:id', {}, {
+        //    query: { method: "GET", cache: true, isArray: true },
+        //    create: { method: "POST" },
+        //    get: { method: "GET", cache: true, url: serviceBase + "api/Images?id=:id" },
+        //    remove: { method: "DELETE", url: serviceBase + "api/Images?id=:id" },
+        //    update: { method: "PUT", url: serviceBase + "api/Images?id=:id" }
+        //})
+        return $resource(serviceBase + 'api/Images/:id', { id: '@id' });
+    }]);
 
 apiServicesApp.factory('MyAuth', function () {
     return {
-        accessTokenId:null
+        accessTokenId: null
     }
 })
 
